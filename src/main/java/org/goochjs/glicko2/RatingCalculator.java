@@ -20,8 +20,12 @@ public class RatingCalculator {
 	private final static double DEFAULT_RATING =  1500.0;
 	private final static double DEFAULT_DEVIATION =  350;
 	private final static double DEFAULT_VOLATILITY =  0.06;
+	/** Reasonable choices of TAU are between 0.3 and 1.2,
+	 though the system should be tested to decide which value results in greatest predictive
+	 accuracy. Smaller values of τ prevent the volatility measures from changing by large amounts,
+	 which in turn prevent enormous changes in ratings based on very improbable results. */
 	private final static double DEFAULT_TAU =  0.75;
-	private final static double MULTIPLIER =  173.7178;
+	private final static double MULTIPLIER =  173.7178; /** for converting the ratings and RD’s onto the Glicko-2 scale */
 	private final static double CONVERGENCE_TOLERANCE =  0.000001;
 	
 	private double tau; // constrains volatility over time
